@@ -33,7 +33,7 @@
 - Install `Python` (`3.11+` recommended)
 - Install requirements
   ```bash
-  pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn
+  pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
   ```
 - Run directly
   ```bash

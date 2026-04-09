@@ -3,7 +3,7 @@ import requests, pickle, base64, os, webbrowser, threading, time, sys
 import config
 
 HEADERS = {
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36'
+    'User-Agent': 'Mozilla/5.0 (Linux; Android 13; V2148A Build/TP1A.220624.014; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/116.0.0.0 Mobile Safari/537.36 XWEB/1160117 MMWEBSDK/20240404 MMWEBID/8833 MicroMessenger/8.0.49.2600(0x28003137) WeChat/arm64 Weixin NetType/WIFI Language/zh_CN ABI/arm64'
 }
 session = requests.session()
 PORT = 50351
@@ -87,5 +87,6 @@ class OpenSite(threading.Thread):
 if __name__ == '__main__':
     url = f'http://127.0.0.1:{PORT}/page/index.html'
     print(f'请访问: {url}\n\n\n\n')
-    OpenSite(1, url).start()
+    if getattr(sys, 'frozen', False):
+        OpenSite(1, url).start()
     app.run('127.0.0.1', port=PORT)
